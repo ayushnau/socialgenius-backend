@@ -12,4 +12,4 @@ jobs:
         run: |
           curl -X GET \
           -H "Content-Type: application/json" \
-          https://backend-twitter-xi.vercel.app/cron/post-news-tweet
+          https://backend-twitter-xi.vercel.app/cron/post-news-tweet/
