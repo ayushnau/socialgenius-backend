@@ -146,7 +146,7 @@ const personalTouchStyles = [
       // const response = await postTweetWithMultipleMedia(tweetText);
       
       console.log("Automated personal news tweet posted successfully:", {});
-      return response;
+      return {success: true};
     } catch (error) {
       console.error("Error posting automated news tweet:", error);
     }

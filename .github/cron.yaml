@@ -1,0 +1,14 @@
+name: Scheduled Tweet
+on:
+  schedule:
+    - cron: '0 0,5,10,15,20 * * *'  # Runs at 00:00, 05:00, 10:00, 15:00, and 20:00 UTC
+jobs:
+  tweet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Tweet API endpoint
+        run: |
+          curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.CRON_JOB_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          https://backend-twitter-xi.vercel.app/cron/post-news-tweet

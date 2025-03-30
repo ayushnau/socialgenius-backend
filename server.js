@@ -23,34 +23,30 @@ app.use('/tweet', tweetRoutes);
 
 
 
-const prodCron = "*/1 * * * *"
-// // const prodCron = "0 0,5,10,15,20 * * *"; 
+// const prodCron = "*/1 * * * *"
+// // // const prodCron = "0 0,5,10,15,20 * * *"; 
 
-cron.schedule(prodCron, async () => {
-  // const jitter = Math.floor(Math.random() * 30); // Add 0-30 min delay
-  // setTimeout(async () => {
-    console.log('Running automated personal news tweet task...');
-    await postAutomatedNewsTweet();
-  // }, jitter * 60 * 1000);
-});
+// cron.schedule(prodCron, async () => {
+//   // const jitter = Math.floor(Math.random() * 30); // Add 0-30 min delay
+//   // setTimeout(async () => {
+//     console.log('Running automated personal news tweet task...');
+//     await postAutomatedNewsTweet();
+//   // }, jitter * 60 * 1000);
+// });
 
 
 app.get('/cron/post-news-tweet', async (req, res) => {
-  // const authHeader = req.headers.authorization || '';
-  // console.log(authHeader, process.env.CRON_SECRET);
-  // if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-  //   return res.status(401).json({ error: 'Unauthorized' });
-  // }
-  console.log('Running automated personal news tweet task...');
-  res.status(200).send('Automated personal news tweet task completed');
+  // log the header authroization. 
+  console.log(req.headers.authorization);
 
-  setInterval(async () => {
-    console.log('Running automated personal news tweet task...');
-    // await postAutomatedNewsTweet();
-  }, 5000);
-  // await postAutomatedNewsTweet();
-  // res.send('Automated personal news tweet task completed');
+   const jitter = Math.floor(Math.random() * 30); // Add 0-30 min delay
+  // setTimeout(async () => {
+  console.log('Running automated personal news tweet task...');
+  await postAutomatedNewsTweet();
+  res.status(200).send('Automated personal news tweet task completed');
+  // }, jitter * 60 * 1000);  
 });
+
 
 
 app.get('/', (req, res) => {
