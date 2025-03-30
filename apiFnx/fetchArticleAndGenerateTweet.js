@@ -143,7 +143,7 @@ const personalTouchStyles = [
       
       console.log("Tweet text:", tweetText);
       // Post the tweet
-      // const response = await postTweetWithMultipleMedia(tweetText);
+      const response = await postTweetWithMultipleMedia(tweetText);
       
       console.log("Automated personal news tweet posted successfully:", {});
       return {success: true};
