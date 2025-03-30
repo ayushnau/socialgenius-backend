@@ -10,7 +10,6 @@ jobs:
     steps:
       - name: Call Tweet API endpoint
         run: |
-          curl -X POST \
-          -H "Authorization: Bearer ${{ secrets.CRON_JOB_API_KEY }}" \
+          curl -X GET \
           -H "Content-Type: application/json" \
           https://backend-twitter-xi.vercel.app/cron/post-news-tweet
