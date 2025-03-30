@@ -1,7 +1,7 @@
 name: Scheduled Tweet
 on:
   schedule:
-    - cron: '0 0,5,10,15,20 * * *'  # Runs at 00:00, 05:00, 10:00, 15:00, and 20:00 UTC
+    - cron: '*/1 * * * *'  # Runs at 00:00, 05:00, 10:00, 15:00, and 20:00 UTC
 jobs:
   tweet:
     runs-on: ubuntu-latest
