@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '0/1 * * * *'  # Runs every minute
+    - cron: '40 4 * * *'  # Runs at 4:40 AM UTC every day
 jobs:
   tweet:
     runs-on: ubuntu-latest
